@@ -20,7 +20,7 @@ jobs:
     - name: Verify Base Image Integrity
       if: ${{ github.ref_type == 'tag' }}
       run:
-        gh attestation verify oci://ghcr.io/vanilla-os/desktop:main --owner Vanilla-OS
+        gh attestation verify oci://ghcr.io/rlc-linux/desktop:main --owner rlc-linux
       env:
         GH_TOKEN: ${{ github.token }}
 
@@ -39,7 +39,7 @@ jobs:
     - name: Change tag in recipe
       if: ${{ github.ref_type == 'tag' }}
       run: |
-        sed 's/ghcr.io\/vanilla-os\/desktop:dev/ghcr.io\/vanilla-os\/desktop:main/' -i recipe.yml
+        sed 's/ghcr.io\/rlc-linux\/desktop:dev/ghcr.io\/rlc-linux\/desktop:main/' -i recipe.yml
 
     - uses: vanilla-os/vib-gh-action@v0.8.1
       with:

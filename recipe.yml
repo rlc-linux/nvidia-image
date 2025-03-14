@@ -1,11 +1,11 @@
-name: Vanilla Desktop Nvidia
+name: RusLand Desktop Nvidia
 id: nvidia
 stages:
 - id: build
-  base: ghcr.io/vanilla-os/desktop:dev
+  base: ghcr.io/rlc-linux/desktop:dev
   singlelayer: false
   labels:
-    maintainer: Vanilla OS Contributors
+    maintainer: Ruslan Artemev
   args:
     DEBIAN_FRONTEND: noninteractive
   runs:

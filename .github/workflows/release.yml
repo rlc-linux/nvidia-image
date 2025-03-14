@@ -17,7 +17,7 @@ jobs:
     steps:
     - name: Verify Base Image Integrity
       run:
-        gh attestation verify oci://ghcr.io/vanilla-os/desktop:main --owner Vanilla-OS
+        gh attestation verify oci://ghcr.io/rlc-linux/desktop:main --owner rlc-linux
       env:
         GH_TOKEN: ${{ github.token }}
 
@@ -37,7 +37,7 @@ jobs:
 
       - name: Change tag in recipe.
         run: |
-          sed 's/ghcr.io\/vanilla-os\/desktop:dev/ghcr.io\/vanilla-os\/desktop:main/' -i recipe.yml
+          sed 's/ghcr.io\/rlc-linux\/desktop:dev/ghcr.io\/rlc-linux\/desktop:main/' -i recipe.yml
 
       - uses: vanilla-os/vib-gh-action@v0.8.1
         with:
